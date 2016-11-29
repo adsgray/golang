@@ -24,7 +24,13 @@ func main() {
 
 	// Iterate over the first array declared.
 	// Display the string value and address of each element.
-	for _, elem := range arr1 {
-		fmt.Println(elem)
+	/*
+		// using range makes a copy of the string (pointer, length)
+		for _, elem := range arr1 {
+			fmt.Printf("%v : %p\n", elem, elem)
+		}
+	*/
+	for i := 0; i < len(arr1); i++ {
+		fmt.Printf("%v : %p\n", arr1[i], &arr1[i])
 	}
 }
