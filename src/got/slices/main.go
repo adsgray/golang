@@ -44,7 +44,8 @@ func main() {
 	s2 := s1[1 : 1+2] // start plus length
 
 	// Display each index position and slice values for the new slice.
-	for i := 0; i < len(s2); i++ {
+	// **** single value for range is just the index
+	for i := range s2 {
 		fmt.Printf("index: %v value:%v\n", i, s2[i])
 	}
 }
