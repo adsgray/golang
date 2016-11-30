@@ -70,7 +70,7 @@ type sysadmin struct {
 // Declare a method named administrate for the sysadmin type, implementing the
 // administrator interface. administrate should print out the name of the
 // sysadmin, as well as the system they are administering.
-func (s sysadmin) administrate(system string) {
+func (s *sysadmin) administrate(system string) {
 	fmt.Printf("Hi my name is %q and I am administering %q\n", s.name, system)
 }
 
@@ -82,7 +82,7 @@ type programmer struct {
 // Declare a method named develop for the programmer type, implementing the
 // developer interface. develop should print out the name of the
 // programmer, as well as the system they are coding.
-func (p programmer) develop(system string) {
+func (p *programmer) develop(system string) {
 	fmt.Printf("Hi my name is %q and I am coding %q\n", p.name, system)
 }
 
@@ -104,11 +104,11 @@ func main() {
 	var devs devlist
 
 	// Push a new sysadmin onto admins.
-	admins.pushAdmin(sysadmin{"Patrick Dunleavy"})
+	admins.pushAdmin(&sysadmin{"Patrick Dunleavy"})
 
 	// Push two new programmers onto devs.
-	devs.pushDev(programmer{"Douglas Gray"})
-	devs.pushDev(programmer{"Thomas Gray"})
+	devs.pushDev(&programmer{"Douglas Gray"})
+	devs.pushDev(&programmer{"Thomas Gray"})
 
 	// Create a variable named cmp of type company, and initialize it by
 	// hiring (popping) an administrator from admins and a developer from devs.
