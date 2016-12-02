@@ -44,7 +44,8 @@ func main() {
 
 	// Create a variable to be used to track received messages.
 	// Set the value to the number of goroutines created.
-	var waitingfor int = numroutines
+	//var waitingfor int = numroutines
+	waitingfor := numroutines
 
 	// Iterate receiving each value until they are all received.
 	for waitingfor > 0 {
